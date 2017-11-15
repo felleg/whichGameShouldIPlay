@@ -36,7 +36,7 @@ elif args.one:
     gamelist = [gamelist_1P_normal, gamelist_1P_long]
 elif args.two:
     print("You selected 2P games.")
-    gamelist = gamelist_2P
+    gamelist = [gamelist_2P]
 else:
     print("You selected all games.")
     gamelist = [gamelist_1P_normal, gamelist_1P_long, gamelist_2P]

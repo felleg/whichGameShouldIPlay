@@ -27,21 +27,20 @@ args = parser.parse_args()
 
 if   args.med:
     print ("You selected medium length games.")
-    gamelist = [gamelist_1P_normal]
+    gamelist = gamelist_1P_normal
 elif args.long:
     print ("You selected long games.")
-    gamelist = [gamelist_1P_long]
+    gamelist = gamelist_1P_long
 elif args.one:
     print("You selected 1P games.")
-    gamelist = [gamelist_1P_normal, gamelist_1P_long]
+    gamelist = gamelist_1P_normal + gamelist_1P_long
 elif args.two:
     print("You selected 2P games.")
-    gamelist = [gamelist_2P]
+    gamelist = gamelist_2P
 else:
     print("You selected all games.")
-    gamelist = [gamelist_1P_normal, gamelist_1P_long, gamelist_2P]
+    gamelist = gamelist_1P_normal + gamelist_1P_long + gamelist_2P
 
-gamelist = [item for sublist in gamelist for item in sublist]
 random.shuffle(gamelist)
 counter = 0
 limit = 3 if args.unl == None else len(gamelist)

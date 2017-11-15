@@ -22,6 +22,7 @@ parser.add_argument('-med', help='Use this flag to suggest games average in comp
 parser.add_argument('-long', help='Use this flag to suggest long games only', action="store_true")
 parser.add_argument('-one', help='Use this flag to suggest one-player games only', action="store_true")
 parser.add_argument('-two', help='Use this flag to suggest two-player games only', action="store_true")
+parser.add_argument('-unl', help='Use this flag to enable unlimited suggestions (instead of 3)', action="store_true")
 args = parser.parse_args()
 
 if   args.med:
@@ -43,9 +44,9 @@ else:
 gamelist = [item for sublist in gamelist for item in sublist]
 random.shuffle(gamelist)
 counter = 0
-limit = 3
+limit = 3 if args.unl == None else len(gamelist)
 while (counter < limit): 
-    print ("Generating your game suggestion ", end=" ")
+    print ("Generating your game suggestion out of "+str(len(gamelist)-counter)+ " games", end=" ")
     c=0
     while (c<5):
         print("... ", end=" ", flush=True),

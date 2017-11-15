@@ -9,4 +9,5 @@ You run the script by doing "python whichGameShouldIPlay.py" in a terminal. Avai
   -long       Use this flag to suggest long games only
   -one        Use this flag to suggest one-player games only
   -two        Use this flag to suggest two-player games only
+  -unl        Use this flag to enable unlimited suggestions (instead of 3)
 
